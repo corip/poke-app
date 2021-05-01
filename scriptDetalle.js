@@ -18,7 +18,7 @@ window.onload = function () {
 function getPokeById(id) {
 
     var imagen = document.getElementById("imagen");
-var name = document.getElementById("name");
+var nombre = document.getElementById("nombre");
 var peso = document.getElementById("peso");
 var altura = document.getElementById("altura");
     
@@ -26,7 +26,7 @@ var altura = document.getElementById("altura");
         .then(response => response.json())
         .then(json =>{ console.log(json)
             console.log( json.name)
-            name.innerHTML = json.name;
+            nombre.innerHTML = json.name;
             peso.innerHTML = json.weight;
             altura.innerHTML = json.height;
             imagen.setAttribute('src',json.sprites.front_default)

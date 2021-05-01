@@ -2,16 +2,7 @@ function getPokeList() {
 
 
     var res;
-    /*  $.ajax({
-        url:   'https://pokeapi.co/api/v2/pokemon',
-        type:  'get'
-      }).done(function (response) {
-          res = JSON.parse(response);     
-      });
-  
-      res.results.forEach(element => {
-          console.log(element)
-      });*/
+
 
     fetch('https://pokeapi.co/api/v2/pokemon')
         .then(response => res = response.json())
@@ -23,7 +14,6 @@ function getPokeList() {
             var id=1;
             res.results.forEach(element => {
                     
-                //for ( var i=0; i < 5; i ++) {
                 var newDiv = document.createElement("tr");
                 newDiv.innerHTML =
                     '<td>' + element.name + '</td>' +
@@ -37,22 +27,12 @@ function getPokeList() {
 
                 
                 var btnDetalle = document.getElementById('detail');
-               /* btnDetalle.onclick = function () {
-                    
-                    location.href ="./detalle.html?id="+1;
 
-                }*/
-
-
-                //}
 
             });
         })
 
-
-
-
-    return res;
+    
 
 
 }
